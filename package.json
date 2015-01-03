@@ -7,7 +7,7 @@
   "author": "Lin Clark <lin.w.clark@gmail.com> (http://lin-clark.com)",
   "license": "MIT",
   "dependencies": {
-    "applescript": "^0.2.1",
+    "applescript": "linclark/node-applescript",
     "github": "^0.2.3",
     "js-yaml": "^3.2.5",
     "osenv": "^0.1.0",
