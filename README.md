@@ -2,14 +2,18 @@
 
 Node-based CLI tool to sync GitHub issues to Omnifocus
 
+## Requirements
+
+OSX Yosemite (because we use JavaScript for Automation instead of AppleScript)
+
 ## Installation
 
 Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
+1. Install the package globally.
 ```sh
 npm install omnifocus-github --global
 ```
-## Installation
 1. Download the [OmniFocusLibrary](http://pixelsnatch.com/omnifocus/OmniFocus.scpt) and move it to `~/Library/Script Libraries`
 1. Create an [OAuth token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) on GitHub
 1. Create a config file named `~/.omnifocus-github`. You'll probably want to change permissions, e.g. `sudo chmod 0600 ~/.omnifocus-github`.
