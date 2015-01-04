@@ -43,6 +43,10 @@ omnigraffle-github
 
 None
 
+## Hat tips
+
+- @mrtazz for the idea, from [How OmniFocus controls my life](http://www.unwiredcouch.com/2014/05/13/omnifocus.html)
+
 ## License
 
 MIT
