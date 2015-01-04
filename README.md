@@ -1,6 +1,6 @@
-# omnifocus-github 
+# omnifocus-github
 
-
+Node-based CLI tool to sync GitHub issues to Omnifocus
 
 ## Installation
 
@@ -9,17 +9,18 @@ Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't 
 ```sh
 npm install omnifocus-github --global
 ```
+## Installation
+1. Download the [OmniFocusLibrary](http://pixelsnatch.com/omnifocus/OmniFocus.scpt) and move it to `~/Library/Script Libraries`
+1. Create an [OAuth token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) on GitHub
+1. Create a config file named `~/.omnifocus-github`. You'll probably want to change permissions, e.g. `sudo chmod 0600 ~/.omnifocus-github`.
+1. In the config file, fill in values:
+```yaml
+token: <your GitHub auth token here>
+```
 
 ## Usage
 
 ```sh
-# 1. Download http://pixelsnatch.com/omnifocus/OmniFocus.scpt and place in ~/Library/Script Libraries
-# 2. Create an OAuth token on GitHub
-# 3. Create a file named ~/.omnifocus-github and fill in values:
-#
-#    token: <your GitHub auth token here>
-# 4. Then run:
-
 omnigraffle-github
 
 ```

@@ -1,7 +1,7 @@
 {
   "name": "omnifocus-github",
   "version": "1.0.1",
-  "description": "",
+  "description": "Node-based CLI tool to sync GitHub issues to Omnifocus",
   "main": "index.js",
   "keywords": [],
   "author": "Lin Clark <lin.w.clark@gmail.com> (http://lin-clark.com)",
