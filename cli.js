@@ -39,7 +39,7 @@ function formatScript(arr) {
     script += "of = Library('OmniFocus');"
     + "var name = '"+ issueName + "';"
     + "if (of.tasksWithName(name).length <= 0) {"
-    + "of.parse('" + issueName +"! @GitHub');"
+    + "of.parse('" + issueName +" @GitHub');"
     + "}\n"
   }
   return script;
