@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+notifications:
+  email: false
+deploy:
+  provider: npm
+  email: lin.w.clark@gmail.com
+  api_key:
+    secure: e0rKgeoqLL83TOpipUawxwowRJnW73bHQbFj2T/EY48lvF3ajfN+iDOtMWjA+nuesCA4ZRbYqZrgKBD3gdEgnH7nnEyjOKw5FFCNFZFc7xNATuzm9frPa+KeIyu1EN6IWsvaq4Jjrwa/5t5kYO88TrdJITDRmCQ/+td0zO5izuE=
+  on:
+    tags: true
+    repo: linclark/omnifocus-github
