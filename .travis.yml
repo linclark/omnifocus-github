@@ -7,5 +7,4 @@ notifications:
 deploy:
   provider: npm
   email: lin.w.clark@gmail.com
-  api_key:
-    secure: DZlgJcoAcLtoPK/r/kGBMVXA5qKc3ob33pdlEdtDBSgopIAwTU1E4MWChmEVPy5/MWUFtjgsk2aN+nN+g5l3DzZGoFHGTLSPk/UapnkqKMA/83bQSwBr8DGBFGZcloaoIsYHE9Tkgaoh3xsEk+EaA72cRCOCUhs/ofCUxsVx29E=
+  api_key: aldNaUd0ampCeDR5czZ3QVJB
