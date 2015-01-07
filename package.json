@@ -1,6 +1,6 @@
 {
   "name": "omnifocus-github",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Node-based CLI tool to sync GitHub issues to Omnifocus",
   "main": "index.js",
   "keywords": [],
