@@ -8,7 +8,8 @@ deploy:
   provider: npm
   email: lin.w.clark@gmail.com
   api_key:
-    secure: e0rKgeoqLL83TOpipUawxwowRJnW73bHQbFj2T/EY48lvF3ajfN+iDOtMWjA+nuesCA4ZRbYqZrgKBD3gdEgnH7nnEyjOKw5FFCNFZFc7xNATuzm9frPa+KeIyu1EN6IWsvaq4Jjrwa/5t5kYO88TrdJITDRmCQ/+td0zO5izuE=
+    secure: jYe+aKrZu6mDn5Di2BvWL49ehOKJOfXqXN2OaIan8pZ7IoIMefZPnS4v5UmrgjrIPqgG+gVRuLG3QAg8IBExGUXsvw+ADwC2XvdgXhPkhZhtvJKOpw9i2RSCdM1i34yK47DNsDtkkPgT+4cPHHE4rWRi66SX0Qm/GFnKUdSFnYI=
   on:
     tags: true
     repo: linclark/omnifocus-github
+    all_branches: true

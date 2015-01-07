@@ -1,11 +1,9 @@
 {
   "name": "omnifocus-github",
-  "version": "1.0.3",
   "description": "Node-based CLI tool to sync GitHub issues to Omnifocus",
-  "main": "index.js",
-  "keywords": [],
+  "version": "1.0.10",
   "author": "Lin Clark <lin.w.clark@gmail.com> (http://lin-clark.com)",
-  "license": "MIT",
+  "bin": "cli.js",
   "dependencies": {
     "applescript": "linclark/node-applescript",
     "github": "^0.2.3",
@@ -13,6 +11,11 @@
     "osenv": "^0.1.0",
     "temp": "^0.8.1"
   },
-  "bin": "cli.js",
-  "preferGlobal": true
+  "keywords": [],
+  "license": "MIT",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/linclark/omnifocus-github"
+  }
 }
