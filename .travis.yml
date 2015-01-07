@@ -7,7 +7,8 @@ notifications:
 deploy:
   provider: npm
   email: lin.w.clark@gmail.com
-  api_key: jWMiGtjjBx4ys6wARA
+  api_key:
+    secure: ZEQncI5Qr4pNAYjcj0CcDrugPD9Clnz7FZK7M9C1d+1yvN0p2lALl9vq3GXeja8DvjWCSSLeWpjM6isstY9MBt0kxbK7VnDsPmI7P0snIXW3Se5SBmHfnU6KSWOBPikqQIfYXzaURZChlwybsmdAV6h5kroKsyw6mVok1MAg+kI=
   on:
     tags: true
     repo: linclark/omnifocus-github
