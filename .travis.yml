@@ -9,5 +9,6 @@ deploy:
   email: lin.w.clark@gmail.com
   api_key: aldNaUd0ampCeDR5czZ3QVJB
   on:
-    all_branches: true
     tags: true
+    repo: linclark/omnifocus-github
+    all_branches: true
