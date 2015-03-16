@@ -25,7 +25,7 @@ token: <your GitHub auth token here>
 ## Usage
 
 ```sh
-omnigraffle-github
+omnifocus-github
 
 ```
 
