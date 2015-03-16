@@ -1,1 +1,1 @@
-omnigraffle-github
+omnifocus-github
