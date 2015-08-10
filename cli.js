@@ -2,12 +2,23 @@
 
 var applescript = require("applescript");
 var fs          = require('fs');
-var github      = new (require("github"))({version: "3.0.0"});
 var osenv       = require('osenv');
 var temp        = require('temp').track();
 var yaml        = require('js-yaml');
+var GithubApi   = require("github");
+var extend      = require('util')._extend;
+
+var github,
+    options = {
+      version: "3.0.0"
+    };
 
 if (config = getConfig()) {
+  if (config.githubOptions) {
+    extend(options, config.githubOptions);
+  }
+
+  github = new GithubApi(options);
   github.authenticate({type: 'oauth', token: config.token});
   github.issues.getAll({filter: "assigned"}, processIssues);
 }
@@ -25,7 +36,9 @@ function processIssues(err, res) {
       fs.write(info.fd, script);
       fs.close(info.fd, function(err) {
         // @TODO: Remove empty callback when https://github.com/TooTallNate/node-applescript/issues/8 is resolved
-        applescript.execFile(info.path, ["-lJavaScript"], function(err, rtn) { });
+        applescript.execFile(info.path, ["-lJavaScript"], function(err, rtn) {
+            console.log(err, rtn);
+        });
       });
     }
   });
@@ -33,15 +46,17 @@ function processIssues(err, res) {
 
 function formatScript(arr) {
   var script = "";
+
   for (var i = 0, len=arr.length; i < len; ++i) {
-    var issueName = arr[i].repository.full_name + "/issues/" + arr[i].number;
+    var parseText = arr[i].title + ' ::' + arr[i].repository.name + ' @office' + ' //' + arr[i].html_url;
 
     script += "of = Library('OmniFocus');"
-    + "var name = '"+ issueName + "';"
+    + "var name = '"+ arr[i].title + "';"
     + "if (of.tasksWithName(name).length <= 0) {"
-    + "of.parse('" + issueName +" @GitHub');"
+    + "of.parse('" + parseText + "');"
     + "}\n"
   }
+
   return script;
 }
 
