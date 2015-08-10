@@ -37,7 +37,10 @@ function processIssues(err, res) {
       fs.close(info.fd, function(err) {
         // @TODO: Remove empty callback when https://github.com/TooTallNate/node-applescript/issues/8 is resolved
         applescript.execFile(info.path, ["-lJavaScript"], function(err, rtn) {
-            console.log(err, rtn);
+          if(err){
+              console.error(err);
+          }
+          console.log('--- complete');
         });
       });
     }
@@ -47,14 +50,18 @@ function processIssues(err, res) {
 function formatScript(arr) {
   var script = "";
 
-  for (var i = 0, len=arr.length; i < len; ++i) {
-    var parseText = arr[i].title + ' ::' + arr[i].repository.name + ' @office' + ' //' + arr[i].html_url;
+  console.log(arr.length + ' issues founded');
 
-    script += "of = Library('OmniFocus');"
-    + "var name = '"+ arr[i].title + "';"
-    + "if (of.tasksWithName(name).length <= 0) {"
-    + "of.parse('" + parseText + "');"
-    + "}\n"
+  for (var i = 0, len=arr.length; i < len; ++i) {
+    var parseText = arr[i].title + ' ::' + arr[i].repository.name + ' @github' + ' //' + arr[i].html_url;
+
+    script += "of = Library('OmniFocus');";
+    script += "var name = '"+ arr[i].title + "';";
+    script += "if (of.tasksWithName(name).length <= 0) {";
+    script += "of.parse('" + parseText + "');";
+    script += "}\n";
+
+    console.log(parseText);
   }
 
   return script;
