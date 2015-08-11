@@ -5,7 +5,7 @@
   "author": "Lin Clark <lin.w.clark@gmail.com> (http://lin-clark.com)",
   "bin": "cli.js",
   "dependencies": {
-    "applescript": "latest",
+    "applescript": "^1.0.0",
     "github": "^0.2.3",
     "js-yaml": "^3.2.5",
     "osenv": "^0.1.0",
@@ -16,6 +16,6 @@
   "preferGlobal": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/shiren/omnifocus-github"
+    "url": "git://github.com/linclark/omnifocus-github"
   }
 }
