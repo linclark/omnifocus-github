@@ -53,11 +53,11 @@ function formatScript(arr) {
   console.log('--- ' + arr.length + ' issues founded ---');
 
   for (var i = 0, len=arr.length; i < len; ++i) {
-    var parseText = arr[i].title + ' ::' + arr[i].repository.name + ' @github' + ' //' + arr[i].html_url;
+    var parseText = '#' + arr[i].number + ' ' + arr[i].title + ' ::' + arr[i].repository.name + ' @github' + ' //' + arr[i].html_url;
 
     script += "of = Library('OmniFocus');";
-    script += "var name = '"+ arr[i].title + "';";
-    script += "if (of.tasksWithName(name).length <= 0) {";
+    script += "var number = '#"+ arr[i].number + "';";
+    script += "if (of.tasksWithName(number, of.getProject('"+ arr[i].repository.name +"').tasks()).length <= 0) {";
     script += "of.parse('" + parseText + "');";
     script += "}\n";
 
