@@ -40,7 +40,7 @@ function processIssues(err, res) {
           if(err){
               console.error(err);
           }
-          console.log('--- complete');
+          console.log('--- complete ---');
         });
       });
     }
@@ -50,7 +50,7 @@ function processIssues(err, res) {
 function formatScript(arr) {
   var script = "";
 
-  console.log(arr.length + ' issues founded');
+  console.log('--- ' + arr.length + ' issues founded ---');
 
   for (var i = 0, len=arr.length; i < len; ++i) {
     var parseText = arr[i].title + ' ::' + arr[i].repository.name + ' @github' + ' //' + arr[i].html_url;
