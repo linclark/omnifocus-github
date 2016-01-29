@@ -14,13 +14,16 @@ var github,
     };
 
 if (config = getConfig()) {
-  if (config.githubOptions) {
-    extend(options, config.githubOptions);
-  }
+    if (config.githubOptions) {
+        extend(options, config.githubOptions);
+    }
 
-  github = new GithubApi(options);
-  github.authenticate({type: 'oauth', token: config.token});
-  github.issues.getAll({filter: "assigned"}, processIssues);
+    github = new GithubApi(options);
+    github.authenticate({type: 'oauth', token: config.token});
+    github.issues.getAll({
+        filter: 'assigned',
+        state: 'open'
+    }, processIssues);
 }
 
 function processIssues(err, res) {
@@ -40,7 +43,7 @@ function processIssues(err, res) {
           if(err){
               console.error(err);
           }
-          console.log('--- complete ---');
+          console.log('--- complete ---', rtn);
         });
       });
     }
@@ -53,15 +56,17 @@ function formatScript(arr) {
   console.log('--- ' + arr.length + ' issues founded ---');
 
   for (var i = 0, len=arr.length; i < len; ++i) {
-    var parseText = '#' + arr[i].number + ' ' + arr[i].title + ' ::' + arr[i].repository.name + ' @github' + ' //' + arr[i].html_url;
+    if (!!arr[i].milestone) {
+        var parseText = '#' + arr[i].number + ' ' + arr[i].title + ' ::' + arr[i].repository.name + ' @github' + ' //' + arr[i].html_url;
 
-    script += "of = Library('OmniFocus');";
-    script += "var number = '#"+ arr[i].number + "';";
-    script += "if (of.tasksWithName(number, of.getProject('"+ arr[i].repository.name +"').tasks()).length <= 0) {";
-    script += "of.parse('" + parseText + "');";
-    script += "}\n";
+        script += "of = Library('OmniFocus');";
+        script += "var number = '#"+ arr[i].number + "';";
+        script += "if (of.tasksWithName(number, of.getProject('"+ arr[i].repository.name +"').tasks()).length <= 0) {";
+        script += "of.parse('" + parseText + "');";
+        script += "}\n";
 
-    console.log(parseText);
+        console.log(parseText);
+    }
   }
 
   return script;

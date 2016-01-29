@@ -17,5 +17,11 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/linclark/omnifocus-github"
+  },
+  "devDependencies": {
+    "applescript": "^1.0.0",
+    "github": "^0.2.4",
+    "osenv": "^0.1.3",
+    "temp": "^0.8.3"
   }
 }
